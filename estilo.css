@@ -36,6 +36,7 @@
     gap: 20px;
 }
 
+
 nav ul li a{
     text-decoration: none;
     color: white;
@@ -45,12 +46,40 @@ nav ul li a{
     font-family: 'Poppins', sans-serif;
     display: block;
     text-align: center;
+    cursor: pointer;
+    font-weight: bold;
 
 }
 
 nav ul li a:hover{
     background-color: #45009469;
     transition: 0.3s;
+}
+
+
+
+#linksb{
+    color: white;
+    border-radius: 10px;
+    background-color: #440094;
+    padding: 5px 20px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+#linksb:hover{
+    background-color: #45009469;
+    transition: 0.3s;
+}
+
+.ii{
+    width: 100%;
 }
 
 #menuham{
@@ -264,6 +293,83 @@ nav ul li a:hover{
 
 #atributo{
     width: 50px;
+}
+
+
+#modalCotacao{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    width: 70vw;
+    height: 50vh;
+    background-color: rebeccapurple;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#modalCep{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    width: 70vw;
+    height: 50vh;
+    background-color: rebeccapurple;
+    display: none;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;    
+}
+
+
+#fechamodal{
+    background-color: red;
+    padding: 5px 30px;    
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#fechamodal:hover{
+    background-color: rgb(204, 21, 21);
+    transition: 0.4s;
+    color: white;
+    box-shadow: 0 0 30px white;
+
+}
+
+
+#inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+input:focus{
+    box-shadow: 0 0 30px white;
+    transition: 0.4s;
+}
+#dolar , #real{
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+}
+
+#labels{
+    font-weight: bolder;
 }
 
 
