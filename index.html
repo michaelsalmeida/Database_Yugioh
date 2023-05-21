@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body onload="mostrarTudo('Dark Magician')" onscroll="escondeHeader()">
+
+    <header id="div_input">
+
+        <a href="#hero"><img src="images/logo.svg" alt="" id="logo"></a>
+
+        <img src="images/cristal_vermelho.svg" alt="" id="menuham" onclick="abreMenu()">
+        
+        <nav id="navbar">
+            <ul>
+                <li><a href="#cardinfo" id="links" onclick="fechamenu()">CARDS</a></li>
+                <li><a href="" id="links">CONVERSOR</a></li>
+                <li><a href="" id="links">CONVERSOR</a></li>
+                <li><a href="" id="links">CONVERSOR</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section id="hero">
+
+        <div id="imgprot">
+            <img src="images/protagonistas.svg" alt="" id="protagonistas">
+        </div>
+
+        <div id="logoebotao">
+            <img src="images/yugioh_nome.svg" alt="" id="nameyugi">
+
+            <p id="textdata">CARD DATABASE</p>
+            
+            <a href="#cardinfo" id="botaoget" onclick="fechamenu()"><img src="images/cristal_azul.svg" alt="" id="cristalazul">
+            GET START <img src="images/cristal_vermelho.svg" alt="" id="cristalvermelho"></a>
+
+
+        </div>
+
+
+    </section>
+
+    <section id="cardinfo">
+        
+        <div id="pesquisa">
+            <div id=pe>
+                <input type="text" id="nome" placeholder="Digite o nome da carta" onkeydown="getName()" list="cartas">
+                <button onclick="mostrarTudo()" id="botaolupa"><img src="images/lupa.svg" alt="" id="lupa"></button>
+            </div>
+            <img src="" alt="">
+        </div>
+    
+        <datalist id="cartas">
+        </datalist>
+    
+    
+        
+    
+        <div id="box">
+            <img src="" id="imgCarta">
+        
+            <div id="informacoes">
+                <div id="nomeatr">
+                    <h1 id="nome_carta"></h1>
+                    <img src="" id="atributo">
+                </div>
+                <div id="tipera">
+
+                    <h2 id="tipo_carta"></h2>
+                    <h2 id="raca"></h2>
+
+                </div>
+                
+                <div id="desc">
+            
+                </div>
+                <div id="atkdef">
+                    <p id="atk"></p>
+                    <p id="def"></p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <script src="engine.js"></script>
+
+</body>
+</html>
