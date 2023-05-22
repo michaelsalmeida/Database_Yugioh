@@ -277,18 +277,21 @@ function abreMenu(){
   var menu = document.getElementById('navbar');
 
   botao.style.transition = '0.2s';
-  menu.style.transform = '3s';
+  menu.style.transition = '0.5s';
 
   if (rodoumenu == 0){
+    botao.src = '../images/cristal_azul.svg';
     botao.style.rotate = '180deg';
     menu.style.left = '0%';
     rodoumenu += 1;
   } else {
+    botao.src = '../images/cristal_vermelho.svg';
     botao.style.rotate = '0deg';
     menu.style.left = '100%';
     rodoumenu -= 1;
   }
 }
+
 
 function fechamenu(){
   var botao = document.getElementById('menuham');
