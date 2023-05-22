@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/gatos.css">
+
     <title>Document</title>
 </head>
 <body onload="mostrarTudo('Dark Magician')" onscroll="escondeHeader()">
@@ -20,7 +22,7 @@
                 <li><a href="#cardinfo" id="links" onclick="fechamenu()">CARDS</a></li>
                 <li><button id="linksb" onclick="modalCotacao(), fechamenu()">CONVERSOR</button></li>
                 <li><button id="linksb" class="ii" onclick="modalCep(), fechamenu()">CEP</button></li>
-                <li><a href="" id="links">CONVERSOR</a></li>
+                <li><button id="linksb" onclick="modalGatinhos()">GATINHOS</button></li>
             </ul>
         </nav>
         
@@ -162,13 +164,37 @@
 
     </div>
 
-    <!-- INICIO DO MODAL DE CEP   -->
+    <!-- FIM DO MODAL DE CEP   -->
+
+    <!-- INICIO DO MODAL DE GATINHOS   -->
+
+    <section id="modalGatos">
+        <div id="closebutton">
+            <button id="fechamodal" onclick="modalGatinhos()">X</button>
+        </div>
+        <img src="" alt="" class="fotoCat">
+
+        <p class="nameCat"></p>
+
+        <p class="vidaCat"></p>
+
+        <div class="temp">
+            <p class="tempCat"></p>
+        </div>
 
 
+        <button onclick="catApi()" class="gerar">GERAR</button>
+
+
+    </section>
+
+    <!-- FIM DO MODAL DE GATINHOS   -->
 
 
     <script src="./js/engine.js"></script>
     <script src="./js/cotacao.js"></script>
     <script src="./js/viacep.js"></script>
+    <script src="./js/gatinhos_fofos.js"></script>
+
 </body>
 </html>
