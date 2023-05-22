@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* -------------------- começo do header -------------------- */
+
+/* div do input e botão */
+#div_input{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+#logo{
+    width: 100px;
+}
+
+/* links */
+
+
+#navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    background-color: #440094;
+    padding: 5px 20px;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+nav ul li a:hover{
+    background-color: #45009469;
+    transition: 0.3s;
+}
+
+
+
+#linksb{
+    color: white;
+    border-radius: 10px;
+    background-color: #440094;
+    padding: 5px 20px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+#linksb:hover{
+    background-color: #45009469;
+    transition: 0.3s;
+}
+
+.ii{
+    width: 100%;
+}
+
+#menuham{
+    display: none;
+}
+
+/* -------------------- fim do header -------------------- */
+
+/* -------------------- começo do hero -------------------- */
+
+#hero{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex; 
+    justify-content: space-around;
+}
+
+#protagonistas{
+    width: 450px;
+}
+
+#imgprot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+#logoebotao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#textdata{
+    width: auto;
+    height: 96px;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 64px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 20px #440094, 1px -1px 20px #440094, -1px 1px 20px #440094, 1px 1px 20px #440094;
+}
+
+#botaoget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #DC1E31, #0057AA);
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#botaoget:hover{
+    box-shadow: 0 0px 40px #fff;
+    transition: 0.4s; 
+}
+
+
+#cristalazul{
+    width: 40px;
+}
+
+#cristalvermelho{
+    width: 40px;
+}
+
+
+
+
+/* -------------------- começo da session das cartas -------------------- */
+
+#pesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+#pe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* input de pesquisa */
+#nome{
+    border-radius: 20px;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 20px;
+    outline: none;
+    border: none;
+}
+
+
+
+#botaolupa{
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    box-shadow: -2px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}
+#botaolupa:hover{
+    background-color: white;
+    transition: 0.5s;
+}
+#lupa{
+    width: 20px;
+}
+
+
+#cardinfo{
+    height: 100vh;
+    padding-top: 130px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#informacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid purple; 
+    border-radius: 10px;
+}
+
+#nomeatr{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+#tipera{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+
+#desc{
+    text-align: start;
+    background-image: linear-gradient(to bottom, #B96739, #0F847E);
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+#atkdef{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- fim da barra de pesquisa -------------------- */
+
+/* -------------------- começo da div com as cartas e informações -------------------- */
+
+#box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+/* imagem da carta */
+#imgCarta{
+    width: 300px;
+    height: 400px;
+}
+
+#atributo{
+    width: 50px;
+}
+
+
+#modalCotacao{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    width: 70vw;
+    height: 50vh;
+    background-color: rebeccapurple;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#modalCep{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    width: 70vw;
+    height: 50vh;
+    background-color: rebeccapurple;
+    display: none;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;    
+}
+
+
+#fechamodal{
+    background-color: red;
+    padding: 5px 10px;    
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#fechamodal:hover{
+    background-color: rgb(204, 21, 21);
+    transition: 0.4s;
+    color: white;
+    box-shadow: 0 0 30px white;
+
+}
+
+
+#inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+input:focus{
+    box-shadow: 0 0 30px white;
+    transition: 0.4s;
+}
+#dolar , #real{
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+}
+
+#labels{
+    font-weight: bolder;
+}
+
+#dropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    gap: 10px;
+}
+
+#tipodeconversor{
+    border: none;
+    border-radius: 710px;
+    box-shadow: 0 0 3px black;
+    cursor: pointer;
+    padding: 5px 5px;
+}
+
+#tipodeconversor:hover{
+    box-shadow: 0 0 10px black;
+}
+
+#tipodeconversor:focus{
+    box-shadow: 0 0 20px purple;
+}
+
+#botaocalc{
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+}
+
+#botaocalc:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px white;
+    transition: 0.4s;
+}
+
+#formcot{
+    width: 70%;
+}
+
+
+
+
+
+/* -------------------- começo dos media query -------------------- */
+@media (max-width: 1100px){
+    #hero{
+        flex-direction: column;
+    }
+    
+    #protagonistas{
+        width: 200px;
+    }
+    #nameyugi{
+        width: 300px;
+    }
+    #textdata{
+        font-size: 30px;
+    }
+    #imgprot{
+        padding-top: 100px;
+    }
+
+}
+
+@media (max-width: 850px){
+    #hero{
+        flex-direction: column;
+    }
+
+
+}
+
+
+@media (max-width: 720px){
+    #navbar{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        align-items: center;
+        top: 80px;
+        left: 100%;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 20px;
+        border: 2px solid purple;
+        overflow: hidden;   
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #menuham{
+        display: block;
+        cursor: pointer;
+    } 
+
+}
+
+@media (max-width: 680px){
+    #box{
+        font-size: 13px;    
+    }
+    #atkdef{
+        font-size: 20px;
+    }
+    #imgCarta{
+        width: 200px;
+        height: 270px;
+    }
+    #atributo{
+        width: 30px;
+    }
+}
+
+@media (max-width: 800px){
+    #box{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    #desc, #tipera, #nomeatr, #atkdef{
+        width: 95vw;
+    }
+    #atkdef{
+        justify-content: space-around;
+    }
+    #informacoes{
+        width: 95vw;
+    }
+
+}

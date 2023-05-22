@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="./css/estilo.css">
     <title>Document</title>
 </head>
 <body onload="mostrarTudo('Dark Magician')" onscroll="escondeHeader()">
@@ -90,20 +90,41 @@
 
     </section>
 
+    <!-- INICIO DO MODAL DE COTAÇÃO DO DÓLAR   -->
+
     <div id="modalCotacao">
-            <button id="fechamodal" onclick="modalCotacao()">X</button>
+        <button id="fechamodal" onclick="modalCotacao()">X</button>
             <p id="textcotacao"></p>
-
-            <div id="inputs">
-                <label for="dolar" id="labels">DOLAR</label>
-                <input type="number" id="dolar" placeholder="Valor do Dólar" onkeydown="calcCot()" required>
+            <div id="dropdown">
+                <label for="tipodeconversor" id="labels">TIPO DE CONVERSÃO</label>
+                <select name="tipodeconversor" id="tipodeconversor" onchange="verificarmodal()" required>
+                    <option value="" disabled selected hidden>Selecione o tipo de conversão</option>
+                    <option value="dolar pra real">Dolar para Real</option>
+                    <option value="real pra dolar">Real para Dolar</option>
+                </select>
     
-                <label for="real" id="labels">REAL</label>
-                <input type="number" id="real" placeholder="Real convertido" onkeydown="calcDol()">
-
+            </div>
+    
+            <div id="inputs">
+                <label for="dolar" id="labels">VALOR ESCOLHIDO</label>
+                <input type="number" id="dolar" required>
+    
+                <label for="real" id="labels" class="labeldebaixo">RESULTADO DA CONVERSÃO</label>
+                <input type="text" id="real" placeholder="Resultado da conversão" readonly>
+    
+                <button id="botaocalc" onclick="calc()">CALCULAR</button>
+    
                 
             </div>
+
+            
     </div>
+
+        <!-- FIM DO MODAL DE COTAÇÃO DO DÓLAR   -->
+
+
+
+        <!-- INICIO DO MODAL DE CEP   -->
 
     <div id="modalCep">
 
@@ -141,12 +162,13 @@
 
     </div>
 
+    <!-- INICIO DO MODAL DE CEP   -->
 
 
 
-    <script src="engine.js"></script>
-    <script src="cotacao.js"></script>
-    <script src="viacep.js"></script>
 
+    <script src="./js/engine.js"></script>
+    <script src="./js/cotacao.js"></script>
+    <script src="./js/viacep.js"></script>
 </body>
 </html>
