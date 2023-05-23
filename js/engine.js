@@ -297,6 +297,7 @@ function fechamenu(){
   var botao = document.getElementById('menuham');
   var menu = document.getElementById('navbar');
 
+  botao.src = '../images/cristal_vermelho.svg';
   botao.style.rotate = '0deg';
   menu.style.left = '100%';
   rodoumenu -= 1;

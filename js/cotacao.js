@@ -25,10 +25,11 @@ function modalCotacao(){
     }
     getCotacao()
         .then((resultado) => {
-            var dolar = Math.ceil(Number(resultado[0]['ask']));
+            var dolar = Number(resultado[0]['ask']);
             var dolarformatado = dolar.toFixed(2);
 
             document.getElementById('textcotacao').innerHTML = 'Dolar atual = US$ ' + dolarformatado;
+
 
         });
 }
@@ -40,7 +41,7 @@ function calc(){
 
             if (dropdown == 'dolar pra real'){
         
-                var dolar = Math.ceil(Number(resultado[0]['ask']));
+                var dolar = Number(resultado[0]['ask']);
     
                 var digitado = Number(document.getElementById('dolar').value);
     
@@ -54,7 +55,7 @@ function calc(){
             } else if (dropdown == 'real pra dolar'){
         
                 
-                var dolar = Math.ceil(Number(resultado[0]['ask']));
+                var dolar = Number(resultado[0]['ask']);
     
                 var digitado = Number(document.getElementById('dolar').value);
     
@@ -78,11 +79,17 @@ function verificarmodal(){
     if (escolha == 'dolar pra real'){
         
         inputdolar.setAttribute('placeholder', 'Digite o valor do Dólar');
+        document.getElementById('real').value = '';
+        document.getElementById('dolar').value = '';
+
+
        
 
     } else if (escolha == 'real pra dolar'){
 
         
         inputdolar.setAttribute('placeholder', 'Digite o valor do Real');
+        document.getElementById('real').value = '';
+        document.getElementById('dolar').value = '';
     }
 }
