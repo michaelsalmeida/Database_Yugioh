@@ -228,7 +228,7 @@ nav ul li a:hover{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* border: 2px solid purple;  */
+    width: 50%;
     border-radius: 10px;
     padding: 10px 10px;
 }
@@ -255,6 +255,7 @@ nav ul li a:hover{
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    padding: 20px;
 }
 
 #atkdef{
@@ -536,7 +537,7 @@ input:focus{
         gap: 20px;
     }
     #desc, #tipera, #nomeatr, #atkdef{
-        width: 95vw;
+        width: 80vw;
     }
     #atkdef{
         justify-content: space-around;
