@@ -18,12 +18,13 @@
     font-weight: bolder;
     color: white;
     padding: 30px 30px;
+    gap: 10px;
 
 }
 #closebutton{
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
 .fotoCat{

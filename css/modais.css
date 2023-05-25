@@ -1,0 +1,36 @@
+#lab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+.fechar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.inputsCEP{
+    border: none;
+    border-radius: 10px;
+    padding-left: 5px;
+    width: 60%;
+    height: 30px;
+}
+
+#cep:focus{
+    box-shadow: 0 0 20px white;
+    transition: 0.4s;
+}
+
+@media (max-width: 715px){
+    #lab{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .inputsCEP{
+        width: 100%;
+    }
+}
