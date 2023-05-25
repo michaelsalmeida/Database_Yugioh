@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <div id="container"></div>
+    <button onclick="exibirPagina(paginaAtual - 1)" disabled id="anterior">Anterior</button>
+    <button onclick="exibirPagina(paginaAtual + 1)" id="proximo">Próximo</button>
+
+<script>
+  // Dados da lista completa
+  const itensPorPagina = 5;
+  let paginaAtual = 0;
+
+  function dividirEmPaginas(lista, itensPorPagina) {
+    const paginas = [];
+    let paginaAtual = [];
+
+    for (let i = 0; i < lista.length; i++) {
+      paginaAtual.push(lista[i]);
+
+      if (paginaAtual.length === itensPorPagina || i === lista.length - 1) {
+        paginas.push(paginaAtual);
+        paginaAtual = [];
+      }
+    }
+    console.log(paginas);
+
+    return paginas;
+  }
+
+  const lista = [
+    {
+      set_name: '2016 Mega-Tins',
+      set_code: 'CT13-EN003',
+      set_rarity: 'Ultra Rare',
+      set_rarity_code: '(UR)',
+      set_price: '6.97'
+    },
+    {
+      set_name: '2017 Mega-Tins',
+      set_code: 'CT14-EN001',
+      set_rarity: 'Secret Rare',
+      set_rarity_code: '(ScR)',
+      set_price: '9.66'
+    },
+    {
+      set_name: 'Battle of Chaos',
+      set_code: '25TH-EN001',
+      set_rarity: 'Ultra Rare',
+      set_rarity_code: '(UR)',
+      set_price: '0.00'
+    },
+    {
+      set_name: 'Booster Pack Collectors Tins 2002',
+      set_code: 'BPT-001',
+      set_rarity: 'Secret Rare',
+      set_rarity_code: '(ScR)',
+      set_price: '63.01'
+    },
+    // ...
+  ];
+
+  const paginas = dividirEmPaginas(lista, itensPorPagina);
+
+  function exibirPagina(paginaNumero) {
+    if (paginaNumero >= 0 && paginaNumero < paginas.length) {
+      const pagina = paginas[paginaNumero];
+      const container = document.getElementById('container');
+
+      // Limpar o conteúdo atual do container
+      container.innerHTML = '';
+
+      // Exibir cada item da página
+      for (let i = 0; i < pagina.length; i++) {
+        const divItem = document.createElement('div');
+        divItem.innerHTML = JSON.stringify(pagina[i]);
+        container.appendChild(divItem);
+      }
+
+      // Atualizar a página atual
+      paginaAtual = paginaNumero;
+
+      // Ativar/desativar botões de navegação
+      const botaoAnterior = document.getElementById('anterior');
+      const botaoProximo = document.getElementById('proximo');
+
+      botaoAnterior.disabled = paginaAtual === 0;
+      botaoProximo.disabled = paginaAtual === paginas.length - 1;
+    }
+  }
+</script>
+    
+</body>
+</html>

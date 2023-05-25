@@ -1,4 +1,6 @@
 var rodoumenu = 0;
+const itemsPerPage = 1; // Número de itens por página
+let currentPage = 1; // Página atual
 
 async function getDados(name = '') {
   const url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?';
@@ -7,7 +9,7 @@ async function getDados(name = '') {
   return await fetch(url + extra)
     .then(response => response.json())
     .then(data => {
-      // console.log(data);
+      // console.log(data);  
       // Percorre a matriz de cards e exibe os nomes
       // Extrai os nomes dos cards do objeto de resposta
       const cardProperties = Object.values(data);
@@ -21,6 +23,7 @@ async function getDados(name = '') {
       const type = cardProperties.flatMap(cardProperty => cardProperty.map(card => card.type));
       const atr = cardProperties.flatMap(cardProperty => cardProperty.map(card => card.attribute));
       const linkval = cardProperties.flatMap(cardProperty => cardProperty.map(card => card.linkval));
+      const sets = cardProperties.flatMap(cardProperty => cardProperty.map(card => card.card_sets));
 
       // Imagem da carta
 
@@ -35,7 +38,8 @@ async function getDados(name = '') {
         race: race,
         type: type,
         atr: atr,
-        linkval: linkval
+        linkval: linkval,
+        sets: sets
       };
 
     })
@@ -79,7 +83,7 @@ function mostrarTudo(){
     
     getDados(nome)
       .then((resultado) => {
-        // console.log(resultado);
+        console.log(resultado);
         /* only monsters */
         if (resultado['atk_card'].length > 1){
           var atk = resultado['atk_card'][0]
@@ -131,7 +135,8 @@ function mostrarTudo(){
         } else {
           var linkval = resultado['linkval'];
         }
-      
+
+        document.getElementById('buttonSet').style.display = 'block';
         document.getElementById('imgCarta').setAttribute('src', resultado['image_card']);
         document.getElementById('nome_carta').innerHTML = resultado['nomes'][0];
 
@@ -141,7 +146,7 @@ function mostrarTudo(){
           /* efeito #EDA17C */
           /* link #6CA4D9 */
           /* trap #E490C2 */
-
+          document.getElementById('atkdef').style.justifyContent = 'space-between';
           document.getElementById('desc').style.backgroundImage = 'none';
 
           document.getElementById('atk').style.display = 'block';
@@ -235,6 +240,7 @@ function mostrarTudo(){
             document.getElementById('desc').style.backgroundImage = 'none';
           }
 
+          document.getElementById('atkdef').style.justifyContent = 'center';
           document.getElementById('atk').style.display = 'none';
           document.getElementById('def').style.display = 'none';
 
@@ -326,3 +332,45 @@ function fechamenu(){
   rodoumenu -= 1;
 
 }
+
+
+function modalSets(){
+  var nome = document.getElementById('nome').value;
+    
+    getDados(nome)
+      .then((resultado) => {
+        if (resultado['sets'].length > 1){
+          var sets = resultado['sets'][0]
+
+        } else {
+          var sets = resultado['sets'];
+
+        }
+        console.log(sets);
+
+        displayItems(sets);
+        updatePagination(sets);
+
+
+      })
+      .catch((erro) => {
+        console.log(erro);
+      });
+}
+
+
+// set_code
+// : 
+// "CT13-EN003"
+// set_name
+// : 
+// "2016 Mega-Tins"
+// set_price
+// : 
+// "6.97"
+// set_rarity
+// : 
+// "Ultra Rare"
+// set_rarity_code
+// : 
+// "(UR)"

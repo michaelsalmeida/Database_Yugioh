@@ -429,6 +429,32 @@ input:focus{
     width: 70%;
 }
 
+#butset{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#buttonSet{
+    display: none;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#buttonSet:hover{
+    box-shadow: 0 0 25px black;
+    background-color: white;
+    color: black;
+    transition: 0.4s;
+}
+
 
 
 
