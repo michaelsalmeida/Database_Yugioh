@@ -1,6 +1,6 @@
 var rodoumenu = 0;
-const itemsPerPage = 1; // Número de itens por página
-let currentPage = 1; // Página atual
+var abriu = 0;
+// var paginaModalDetalhes = 0;
 
 async function getDados(name = '') {
   const url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?';
@@ -83,7 +83,6 @@ function mostrarTudo(){
     
     getDados(nome)
       .then((resultado) => {
-        console.log(resultado);
         /* only monsters */
         if (resultado['atk_card'].length > 1){
           var atk = resultado['atk_card'][0]
@@ -323,6 +322,7 @@ function abreMenu(){
 
 
 function fechamenu(){
+  paginaModalDetalhes = 0;
   var botao = document.getElementById('menuham');
   var menu = document.getElementById('navbar');
 
@@ -334,23 +334,79 @@ function fechamenu(){
 }
 
 
-function modalSets(){
+function modalSetFechar(){
+  if (abriu == 0){
+      document.getElementById('modaldetalhes').style.display = 'flex';
+      abriu += 1;
+  } else {
+      document.getElementById('modaldetalhes').style.display = 'none';
+      abriu -= 1;
+  }
+
+}
+
+
+function modalSets(pag){
   var nome = document.getElementById('nome').value;
+  if (pag == '+'){
+    paginaModalDetalhes += 1;
+  } else if (pag == '-'){
+    paginaModalDetalhes -= 1;
+  } else if (pag == 'x'){
+    paginaModalDetalhes = 0;
+  }
+  
     
     getDados(nome)
       .then((resultado) => {
         if (resultado['sets'].length > 1){
-          var sets = resultado['sets'][0]
+
+          var sets = resultado['sets'][0];
 
         } else {
           var sets = resultado['sets'];
 
         }
-        console.log(sets);
+        console.log(paginaModalDetalhes);
 
-        displayItems(sets);
-        updatePagination(sets);
+        if (sets.length > 1) {
+          document.getElementById('set_code').innerHTML = sets[paginaModalDetalhes]['set_code'];
+          document.getElementById('set_name').innerHTML = sets[paginaModalDetalhes]['set_name'];
+          document.getElementById('set_price').innerHTML = 'US$ ' + sets[paginaModalDetalhes]['set_price'];
+          document.getElementById('set_rarity').innerHTML = sets[paginaModalDetalhes]['set_rarity'];
+          // document.getElementById('set_rarity_code').innerHTML = 'Sigla da raridade: ' + sets[paginaModalDetalhes]['set_rarity_code'];
+        } else {
+          document.getElementById('set_code').innerHTML = sets[paginaModalDetalhes][0]['set_code'];
+          document.getElementById('set_name').innerHTML = sets[paginaModalDetalhes][0]['set_name'];
+          document.getElementById('set_price').innerHTML = 'US$ ' + sets[paginaModalDetalhes][0]['set_price'];
+          document.getElementById('set_rarity').innerHTML = sets[paginaModalDetalhes][0]['set_rarity'];
+          // document.getElementById('set_rarity_code').innerHTML = 'Sigla da raridade: ' + sets[paginaModalDetalhes]['set_rarity_code'];
 
+        }
+
+        
+
+        if (sets.length == 1){
+          document.getElementById('cetaVoltar').disabled = true;
+
+          document.getElementById('cetaProximo').disabled = true;
+
+        } else if (paginaModalDetalhes == 0){
+          document.getElementById('cetaVoltar').disabled = true;
+          document.getElementById('cetaProximo').disabled = false;
+
+        } else if (paginaModalDetalhes == sets.length - 1){
+          document.getElementById('cetaProximo').disabled = true;
+          document.getElementById('cetaVoltar').disabled = false;
+
+        } else {
+          document.getElementById('cetaVoltar').disabled = false;
+
+          document.getElementById('cetaProximo').disabled = false;
+
+        }
+
+        
 
       })
       .catch((erro) => {

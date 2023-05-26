@@ -1,0 +1,51 @@
+#modaldetalhes{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    width: 50vw;
+    height: 70vh;
+    border-radius: 10px;
+    background-color: rebeccapurple;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: white;
+    padding: 30px 30px;
+    gap: 10px;
+
+}
+
+#det{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#divDetalhes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.cetas{
+    border: none;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.cetas:hover{
+    box-shadow: 0 0 20px white;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}

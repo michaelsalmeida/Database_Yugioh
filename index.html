@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="stylesheet" href="./css/gatos.css">
     <link rel="stylesheet" href="./css/modais.css">
+    <link rel="stylesheet" href="./css/modalDetalhes.css">
 
     <title>Document</title>
 </head>
@@ -90,7 +91,7 @@
                 </div>
                 <div id="atkdef">
                     <p id="atk"></p>
-                    <button id="buttonSet" onclick="modalSets()">DETALHES</button>
+                    <button id="buttonSet" onclick="modalSets('x'), fechamenu(), modalSetFechar()">DETALHES</button>
                     <p id="def"></p>
                 </div>
             </div>
@@ -183,7 +184,8 @@
 
     <!-- INICIO DO MODAL DE GATINHOS   -->
 
-    <section id="modalGatos">
+    <section id="modalGatos">   
+        
         <div id="closebutton">
             <button id="fechamodal" onclick="modalGatinhos()">X</button>
         </div>
@@ -210,15 +212,44 @@
     <!-- INICIO DO MODAL DE DETALHES   -->
 
     <div id="modaldetalhes">
-        <div> <button> < </button> </div>
-        <div id="informacoes"></div>
-        <div> <button> > </button> </div>
+        <div class="fechar">
+            <button id="fechamodal" onclick="modalSetFechar()">X</button>
+        </div>
+        <div id="det">
+            <div> 
+                <button class="cetas" id="cetaVoltar" onclick="modalSets('-')">&laquo;</button>
+            </div>
+            <div id="informacoes">
+                <div id="divDetalhes">
+                    <p>Código da carta</p>
+                    <p id="set_code"></p>
+
+                </div>
+
+                <div id="divDetalhes">
+                    <p>Nome da coleção</p>
+                    <p id="set_name"></p>
+                </div>
+                <div id="divDetalhes">
+                    <p>Preço</p>
+                    <p id="set_price"></p>
+                </div>
+
+                <div id="divDetalhes">
+                    <p>Raridade</p>
+                    <p id="set_rarity"></p>
+                </div>
+
+            </div>
+            <div> <button class="cetas" id="cetaProximo" onclick="modalSets('+')">&raquo;</button> </div>
+
+        </div>
     </div>
 
     <!-- FIM DO MODAL DE DETALHES   -->
 
 
-
+    
     <script src="./js/engine.js"></script>
     <script src="./js/cotacao.js"></script>
     <script src="./js/viacep.js"></script>
