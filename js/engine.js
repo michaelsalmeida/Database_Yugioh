@@ -355,6 +355,8 @@ function modalSets(pag){
   } else if (pag == 'x'){
     paginaModalDetalhes = 0;
   }
+
+  
   
     
     getDados(nome)
@@ -367,7 +369,45 @@ function modalSets(pag){
           var sets = resultado['sets'];
 
         }
-        console.log(paginaModalDetalhes);
+        if (sets.length > 1){
+          if (sets.length == 1){
+            document.getElementById('cetaVoltar').disabled = true;
+        
+            document.getElementById('cetaProximo').disabled = true;
+          } else if (paginaModalDetalhes == 0){
+            document.getElementById('cetaVoltar').disabled = true;
+        
+            document.getElementById('cetaProximo').disabled = false;
+          } else if (paginaModalDetalhes == sets.length - 1){
+            document.getElementById('cetaVoltar').disabled = false;
+        
+            document.getElementById('cetaProximo').disabled = true;
+          } else {
+            document.getElementById('cetaVoltar').disabled = false;
+        
+            document.getElementById('cetaProximo').disabled = false;
+          }
+        } else {
+      
+          if (sets[0].length == 1){
+            document.getElementById('cetaVoltar').disabled = true;
+        
+            document.getElementById('cetaProximo').disabled = true;
+          } else if (paginaModalDetalhes == 0){
+            document.getElementById('cetaVoltar').disabled = true;
+        
+            document.getElementById('cetaProximo').disabled = false;
+          } else if (paginaModalDetalhes == sets[0].length - 1){
+            document.getElementById('cetaVoltar').disabled = false;
+        
+            document.getElementById('cetaProximo').disabled = true;
+          } else {
+            document.getElementById('cetaVoltar').disabled = false;
+        
+            document.getElementById('cetaProximo').disabled = false;
+          }
+        }
+        console.log(sets);
 
         if (sets.length > 1) {
           document.getElementById('set_code').innerHTML = sets[paginaModalDetalhes]['set_code'];
@@ -376,35 +416,37 @@ function modalSets(pag){
           document.getElementById('set_rarity').innerHTML = sets[paginaModalDetalhes]['set_rarity'];
           // document.getElementById('set_rarity_code').innerHTML = 'Sigla da raridade: ' + sets[paginaModalDetalhes]['set_rarity_code'];
         } else {
-          document.getElementById('set_code').innerHTML = sets[paginaModalDetalhes][0]['set_code'];
-          document.getElementById('set_name').innerHTML = sets[paginaModalDetalhes][0]['set_name'];
-          document.getElementById('set_price').innerHTML = 'US$ ' + sets[paginaModalDetalhes][0]['set_price'];
-          document.getElementById('set_rarity').innerHTML = sets[paginaModalDetalhes][0]['set_rarity'];
+          console.log(sets[0].length);
+          
+          document.getElementById('set_code').innerHTML = sets[0][paginaModalDetalhes]['set_code'];
+          document.getElementById('set_name').innerHTML = sets[0][paginaModalDetalhes]['set_name'];
+          document.getElementById('set_price').innerHTML = 'US$ ' + sets[0][paginaModalDetalhes]['set_price'];
+          document.getElementById('set_rarity').innerHTML = sets[0][paginaModalDetalhes]['set_rarity'];
           // document.getElementById('set_rarity_code').innerHTML = 'Sigla da raridade: ' + sets[paginaModalDetalhes]['set_rarity_code'];
 
         }
 
         
 
-        if (sets.length == 1){
-          document.getElementById('cetaVoltar').disabled = true;
+        // if (sets.length == 1){
+        //   document.getElementById('cetaVoltar').disabled = true;
 
-          document.getElementById('cetaProximo').disabled = true;
+        //   document.getElementById('cetaProximo').disabled = true;
 
-        } else if (paginaModalDetalhes == 0){
-          document.getElementById('cetaVoltar').disabled = true;
-          document.getElementById('cetaProximo').disabled = false;
+        // } else if (paginaModalDetalhes == 0){
+        //   document.getElementById('cetaVoltar').disabled = true;
+        //   document.getElementById('cetaProximo').disabled = false;
 
-        } else if (paginaModalDetalhes == sets.length - 1){
-          document.getElementById('cetaProximo').disabled = true;
-          document.getElementById('cetaVoltar').disabled = false;
+        // } else if (paginaModalDetalhes == sets.length - 1){
+        //   document.getElementById('cetaProximo').disabled = true;
+        //   document.getElementById('cetaVoltar').disabled = false;
 
-        } else {
-          document.getElementById('cetaVoltar').disabled = false;
+        // } else {
+        //   document.getElementById('cetaVoltar').disabled = false;
 
-          document.getElementById('cetaProximo').disabled = false;
+        //   document.getElementById('cetaProximo').disabled = false;
 
-        }
+        // }
 
         
 
