@@ -49,3 +49,9 @@
     color: white;
     transition: 0.3s;
 }
+
+@media (max-width: 800px){
+    #modaldetalhes{
+        width: 80vw;
+    }
+}
